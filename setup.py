@@ -1,9 +1,5 @@
+from hashlib import md5  # fix for "No module named _md5" error
 from setuptools import setup, find_packages
-try:
-    import md5  # fix for "No module named _md5" error
-except ImportError:
-    # python 3 moved md5
-    from hashlib import md5
 
 tests_require = [
     "dill",
@@ -21,8 +17,6 @@ setup(name="expiringdict",
           "Development Status :: 4 - Beta",
           "Intended Audience :: Developers",
           "License :: OSI Approved :: Apache Software License",
-          "Programming Language :: Python :: 2",
-          "Programming Language :: Python :: 2.7",
           "Programming Language :: Python :: 3",
           "Programming Language :: Python :: 3.6",
           "Topic :: Software Development :: Libraries",
@@ -36,9 +30,7 @@ setup(name="expiringdict",
       include_package_data=True,
       zip_safe=True,
       tests_require=tests_require,
-      install_requires=[
-          'typing;python_version<"3.5"',
-      ],
+      install_requires=[],
       extras_require={
           "tests": tests_require,
       })
